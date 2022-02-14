@@ -4,6 +4,7 @@ function check_error($input)
 {
     $error_message = array();
 
+/*
     // 姓のバリデーションチェック
     if (cempty($input["name1"])) {
         $error_message["name1"] = "姓を入力してください";
@@ -65,6 +66,7 @@ function check_error($input)
     if (!check_empty_array($input, "agree")) {
         $error_message["agree"] = "「個人情報の取り扱いに関する基本方針」に同意の上、チェックをしてください";
     }
+ */
 
     return $error_message;
 }

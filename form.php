@@ -100,7 +100,7 @@ switch ($form_mode) {
 function extract_master()
 {
     $master = array();
-    $master["type"] = array(1 => "採用に関するお問い合わせ", 2 => "清掃の依頼に関するお問い合わせ", 3 => "会社全般に関するお問い合わせ");
+    //$master["type"] = array(1 => "採用に関するお問い合わせ", 2 => "清掃の依頼に関するお問い合わせ", 3 => "会社全般に関するお問い合わせ");
 
     return $master;
 }
@@ -121,7 +121,7 @@ function get_input($input)
     foreach ($input as $key => $value) {
         $data_arr[$key] = $value;
     }
-    $data_arr["type"] = extract_data("type", $input["type"]);
+    //$data_arr["type"] = extract_data("type", $input["type"]);
 
     return $data_arr;
 }
