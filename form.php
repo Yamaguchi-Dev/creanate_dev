@@ -73,17 +73,12 @@ switch ($form_mode) {
             }
             $_SESSION["form_token"] = $post_token;
             require_once("mail_user.php");
-            $mail_data = get_mail_data($input);
-            mb_send_mail($mail_data["to"], $mail_data["subject"], $mail_data["body"], $mail_data["headers"]);
+            $mail_user_data = get_user_mail_data($input);
+            mb_send_mail($mail_user_data["to"], $mail_user_data["subject"], $mail_user_data["body"], $mail_user_data["headers"]);
             // 問合せ先用メール
-            if ($input["type"] == 1) {
-                $mail_data["to"] = "GK021@jrcts.co.jp";
-            } else if ($input["type"] == 2){
-                $mail_data["to"] = "GK022@jrcts.co.jp";
-            } else {
-                $mail_data["to"] = "GK023@jrcts.co.jp";
-            }
-            mb_send_mail($mail_data["to"], $mail_data["subject"], $mail_data["body"], $mail_data["headers"]);
+            require_once("mail_admin.php");
+            $mail_admin_data = get_admin_mail_data($input);
+            mb_send_mail($mail_admin_data["to"], $mail_admin_data["subject"], $mail_admin_data["body"], $mail_admin_data["headers"]);
         }
         unset($_SESSION["form_token"]);
         break;
