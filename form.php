@@ -95,17 +95,8 @@ switch ($form_mode) {
 function extract_master()
 {
     $master = array();
-    //$master["type"] = array(1 => "採用に関するお問い合わせ", 2 => "清掃の依頼に関するお問い合わせ", 3 => "会社全般に関するお問い合わせ");
 
     return $master;
-}
-
-// 選択した結果からname値を抽出する関数
-function extract_data($table, $id)
-{
-    $master = extract_master();
-
-    return $master[$table][$id];
 }
 
 // POSTされた値を表示用に整形する関数
@@ -116,7 +107,6 @@ function get_input($input)
     foreach ($input as $key => $value) {
         $data_arr[$key] = $value;
     }
-    //$data_arr["type"] = extract_data("type", $input["type"]);
 
     return $data_arr;
 }
@@ -124,17 +114,17 @@ function get_input($input)
 // 文字整形を行う関数
 function makeup($input)
 {
-    //フリガナで全角カタカナに変換する
-    if (!cempty($input['kana1'])) {
-        $input['kana1'] = mb_convert_kana(mb_convert_kana($input['kana1'], 'HV', ENC_TYPE), 'C', ENC_TYPE);
-    }
-    if (!cempty($input['kana2'])) {
-        $input['kana2'] = mb_convert_kana(mb_convert_kana($input['kana2'], 'HV', ENC_TYPE), 'C', ENC_TYPE);
+    //ふりがなで全角ひらがなに変換する
+    if (!cempty($input['kana'])) {
+        $input['kana'] = mb_convert_kana(mb_convert_kana($input['kana'], 'KV', ENC_TYPE), 'c', ENC_TYPE);
     }
 
     //メールアドレスで全角英数字を半角英数字に変換する
     if (!cempty($input["email"])) {
         $input["email"] = mb_convert_kana($input["email"], "a", ENC_TYPE);
+    }
+    if (!cempty($input["email_conf"])) {
+        $input["email_conf"] = mb_convert_kana($input["email_conf"], "a", ENC_TYPE);
     }
 
 

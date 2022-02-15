@@ -1,5 +1,6 @@
 <?php
 require_once("form.php");
+if ($form_mode == 'confirm') {
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -74,3 +75,6 @@ function dummy()
 			</form>
 </body>
 </html>
+<?php
+}
+?>
