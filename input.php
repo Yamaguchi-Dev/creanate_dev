@@ -46,7 +46,7 @@
 電話番号
 <input type="text" name="input[tel]" value="<?php echo output_data($input["tel"]); ?>">
 <?php if (!cempty($error_message["tel"])) { ?>
-								<p class="txt_error"><?php echo output_data($error_message["kana"]); ?></p>
+								<p class="txt_error"><?php echo output_data($error_message["tel"]); ?></p>
 <?php } ?>
 <br>
 メールアドレス（半角）
@@ -68,7 +68,7 @@
 <?php } ?>
     <div class="g-recaptcha" data-sitekey="6LexlGgeAAAAADfanQWBiB_Ix6ZjalBs598JQHFQ" data-callback="verifyCallback" data-expired-callback="expiredCallback"></div>
     <p id="warning">送信するにはチェックを入れてください。</p>
-<button class="btn_radius"><div>確認画面へ</div></button>
+<button class="btn_radius" id="send" disabled><div>確認画面へ</div></button>
 			</form>
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>

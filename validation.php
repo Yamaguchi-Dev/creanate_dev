@@ -4,73 +4,71 @@ function check_error($input)
 {
     $error_message = array();
 
-/*
-    // 姓のバリデーションチェック
-    if (cempty($input["name1"])) {
-        $error_message["name1"] = "姓を入力してください";
-    } elseif (!check_strlength($input["name1"], 100)) {
-        $error_message["name1"] = "姓は100文字以内で入力してください";
+    // 御社名のバリデーションチェック
+    if (cempty($input["company"])) {
+        $error_message["company"] = "入力されていません";
+    } elseif (!check_strlength($input["company"], 100)) {
+        $error_message["company"] = "正しく入力してください";
     }
 
-    // 名のバリデーションチェック
-    if (cempty($input["name2"])) {
-        $error_message["name2"] = "名を入力してください";
-    } elseif (!check_strlength($input["name2"], 100)) {
-        $error_message["name2"] = "名は100文字以内で入力してください";
+    // ご担当者名のバリデーションチェック
+    if (cempty($input["name"])) {
+        $error_message["name"] = "入力されていません";
+    } elseif (!check_strlength($input["name"], 100)) {
+        $error_message["name"] = "正しく入力してください";
     }
 
-    // フリガナセイのバリデーションチェック
-    if (cempty($input["kana1"])) {
-        $error_message["kana1"] = "セイを入力してください";
-    } elseif (!check_strlength($input["kana1"], 100)) {
-        $error_message["kana1"] = "セイは100文字以内で入力してください";
+    // ご担当者名(ふりがな)のバリデーションチェック
+    if (cempty($input["kana"])) {
+        $error_message["kana"] = "入力されていません";
+    } elseif (!check_strlength($input["kana"], 100)) {
+        $error_message["kana"] = "正しく入力してください";
+    } elseif (!check_hiragana($input["kana"])) {
+        $error_message["kana"] = "正しく入力してください";
     }
 
-    // フリガナメイのバリデーションチェック
-    if (cempty($input["kana2"])) {
-        $error_message["kana2"] = "メイを入力してください";
-    } elseif (!check_strlength($input["kana2"], 100)) {
-        $error_message["kana2"] = "メイは100文字以内で入力してください";
+    // 電話番号のバリデーションチェック
+    if (cempty($input["tel"])) {
+        $error_message["tel"] = "入力されていません";
+    } elseif (!check_tel($input["tel"])) {
+        $error_message["tel"] = "正しく入力してください";
     }
 
     // メールアドレスのバリデーションチェック
     if (cempty($input["email"])) {
-        $error_message["email"] = "メールアドレスを入力してください";
+        $error_message["email"] = "入力されていません";
     } elseif (!check_strlength($input["email"], 500)) {
-        $error_message["email"] = "メールアドレスは500文字以内で入力してください";
+        $error_message["email"] = "正しく入力してください";
+    } elseif ($input["email"] == $input["email_conf"] && !check_email($input["email"])) {
+        $error_message["email"] = "メールアドレスを正しく入力してください";
     } elseif (!check_email($input["email"])) {
-        $error_message["email"] = "メールアドレスの入力が不正です";
+        $error_message["email"] = "正しく入力してください";
     }
 
-
-    // 電話番号のバリデーションチェック
-    if (cempty($input["tel"])) {
-        $error_message["tel"] = "電話番号を入力してください";
-    } elseif (!check_strlength($input["tel"], 500)) {
-        $error_message["tel"] = "電話番号は500文字以内で入力してください";
-    } elseif (!check_tel($input["tel"])) {
-        $error_message["tel"] = "電話番号の入力に誤りがあります正しく入力してください";
+    // メールアドレス(確認用)のバリデーションチェック
+    if (cempty($input["email_conf"])) {
+        $error_message["email_conf"] = "入力されていません";
+    } elseif (!check_strlength($input["email_conf"], 500)) {
+        $error_message["email_conf"] = "正しく入力してください";
+    } elseif ($input["email"] != $input["email_conf"]) {
+        $error_message["email_conf"] = "同じメールアドレスを入力してください";
     }
 
-    // お問い合わせ項目のバリデーションチェック
-    if (cempty($input["type"])) {
-        $error_message["type"] = "お問い合わせ項目を選択してください";
-    }
-
-    // コメントのバリデーションチェック
+    // お問い合わせ内容のバリデーションチェック
     if (cempty($input["message"])) {
-        $error_message["message"] = "コメントを入力してください";
+        $error_message["message"] = "入力されていません";
     }
-
-    // 同意のバリデーションチェック
-    if (!check_empty_array($input, "agree")) {
-        $error_message["agree"] = "「個人情報の取り扱いに関する基本方針」に同意の上、チェックをしてください";
-    }
- */
 
     return $error_message;
 }
 
+// ひらがなをチェックする関数 正当性があればtrueを、不正がある場合はfalseを返す
+function check_hiragana($str)
+{
+    if (cempty($str)) return true;
+    if (mb_ereg("[^ぁ-んー]", $str)) return false;
+    return true;
+}
 
 // 文字の長さをチェックする関数 第2引数で指定した長さより第1引数の文字列の長さが長い場合はfalseを、長さ以内であればtrueを返す
 function check_strlength($str, $max_length)
@@ -106,8 +104,8 @@ function check_empty_array($input, $contents)
 // 電話番号の正当性をチェックする関数
 function check_tel($input)
 {
-    // 入力した電話番号の中に「-(ハイフン)」の個数が2つより多い場合、falseを返す
-    if (substr_count($input, "-") > 2) return false;
+    // 入力した電話番号の中に「-(ハイフン)」の個数が2つない場合、falseを返す
+    if (substr_count($input, "-") != 2) return false;
 
     // 電話番号を「-(ハイフン)」区切りで配列に代入する
     $tel_ary = explode("-", $input);
