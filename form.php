@@ -116,7 +116,7 @@ function makeup($input)
 {
     //ふりがなで全角ひらがなに変換する
     if (!cempty($input['kana'])) {
-        $input['kana'] = mb_convert_kana(mb_convert_kana($input['kana'], 'KV', ENC_TYPE), 'c', ENC_TYPE);
+        $input['kana'] = mb_convert_kana(mb_convert_kana(str_replace(' ', '', str_replace('　', '', $input['kana'])), 'KV', ENC_TYPE), 'c', ENC_TYPE);
     }
 
     //メールアドレスで全角英数字を半角英数字に変換する

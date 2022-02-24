@@ -104,8 +104,8 @@ function check_empty_array($input, $contents)
 // 電話番号の正当性をチェックする関数
 function check_tel($input)
 {
-    // 入力した電話番号の中に「-(ハイフン)」の個数が2つない場合、falseを返す
-    if (substr_count($input, "-") != 2) return false;
+    // 入力した電話番号の中に「-(ハイフン)」の個数が2つより多い場合、falseを返す
+    if (substr_count($input, "-") > 2) return false;
 
     // 電話番号を「-(ハイフン)」区切りで配列に代入する
     $tel_ary = explode("-", $input);
