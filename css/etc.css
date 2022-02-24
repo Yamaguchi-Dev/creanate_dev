@@ -1,0 +1,336 @@
+@charset "shift_jis";
+
+
+/** ---------------------------------- ***
+	ページタイトル指定
+*** ------------------------------------------------------------------- ***/
+
+#contact #right-main .h3_area h3.h301 {
+height:19px;
+background:url(../images/contact_h301.gif) left top no-repeat;
+}
+
+#etc #right-main .h3_area h3.h301 {
+height:19px;
+background:url(../images/recruit_h301.gif) left top no-repeat;
+}
+
+#etc #right-main .h3_area h3.h302 {
+height:19px;
+background:url(../images/site_rule_h301.gif) left top no-repeat;
+}
+
+#etc #right-main .h3_area h3.h303 {
+height:19px;
+background:url(../images/privacy_h301.gif) left top no-repeat;
+}
+
+
+/** ---------------------------------- ***
+	ご利用にあたって
+*** ------------------------------------------------------------------- ***/
+
+#etc #right-main .pad-btm {padding-bottom:15px;}
+
+#etc #right-main .column ol {
+margin:0;
+padding:0 0 0 23px;
+}
+
+#etc #right-main .column ol li {
+margin:0;
+padding:0 0 10px 0;
+list-style:outside decimal;
+}
+
+#etc #right-main .column ol li ul {
+margin:0;
+padding:10px 0 0 15px;
+}
+
+#etc #right-main .column ol li ul li {
+margin:0;
+padding:0;
+list-style:outside disc;
+}
+
+#etc #right-main .column ol li ul li img {
+vertical-align:middle;
+}
+
+#etc #right-main .column ul {
+margin:0;
+padding:15px 0 15px 23px;
+}
+
+#etc #right-main .column ul li {
+margin:0;
+padding:0;
+list-style:outside disc;
+}
+
+
+
+/** ---------------------------------- ***
+	個人情報保護方針
+*** ------------------------------------------------------------------- ***/
+
+#etc #right-main .column ol.ol_privacy {
+margin:0;
+padding:15px 0 0 23px;
+}
+
+#etc #right-main .column ol.ol_privacy li {
+margin:0;
+padding:0 0 15px 0;
+font-weight:bold;
+list-style:outside decimal;
+}
+
+#etc #right-main .column ol.ol_privacy li span {
+font-weight:normal;
+}
+
+
+#etc #right-main .column p.privacy-name {
+margin:0;
+padding:15px 0 0;
+text-align:right;
+}
+
+
+/** ---------------------------------- ***
+	お問い合わせ
+*** ------------------------------------------------------------------- ***/
+#contact-main{
+margin: 35px 0 100px;
+}
+#contact-main .h3_area{
+margin: 0;
+padding: 0 0 10px;
+text-align: left;
+border-bottom: 2px solid #E68126;
+}
+#contact-main .h3_area h3{
+font-size: 20px;
+font-weight: bold;
+margin: 0 0 0 2px;
+padding: 0;
+text-align: left;
+}
+#contact-main .lead{
+padding: 30px 0 27px;
+}
+.form-area dl{
+display: flex;
+}
+.form-area dl + dl{
+margin-top: 20px;
+}
+.form-area dl dt::after,
+.form-area dl dd::after{
+content: none;
+}
+.form-area dl dt{
+width: 230px;
+font-size: 15px;
+font-weight: bold;
+display: flex;
+justify-content: space-between;
+align-items: baseline;
+margin-right: 10px;
+padding-top: 5px;
+}
+.form-area dl dt .required{
+flex-shrink: 0;
+font-size: 13px;
+color: #e60012;
+border: 1px solid #e60012;
+padding: 4px 10px 3px;
+}
+.form-area dl dd{
+width: 654px;
+line-height: 1.8;
+font-size: 13px;
+}
+.form-area dl dd .form-txt{
+background: url("../images/bk_form-txt.png") repeat;
+width: 100%;
+min-height: 40px;
+padding: 10px;
+border-radius: 5px;
+border: 1px solid #d2d2d2;
+appearance: none;
+-webkit-appearance: none;
+-moz-appearance: none;
+box-sizing: border-box;
+}
+.form-area dl dd .error{
+color: #e60012;
+font-size: 10px;
+margin-top: 8px;
+display: block;
+}
+.form-area dl dd .form-textarea{
+background: url("../images/bk_form-txt.png") repeat;
+width: 100%;
+min-height: 86px;
+padding: 10px;
+border-radius: 5px;
+border: 1px solid #d2d2d2;
+appearance: none;
+-webkit-appearance: none;
+-moz-appearance: none;
+box-sizing: border-box;
+}
+.form-area .contact-submit{
+position: relative;
+border-radius: 10px;
+border: 1px solid #ad490e;
+color: #fff;
+font-weight: bold;
+font-size: 18px;
+width: 300px;
+height: 60px;
+background: linear-gradient(to bottom, #e68126, #ad490e);
+display: block;
+cursor: pointer;
+}
+.form-area .contact-back{
+position: relative;
+border-radius: 10px;
+border: 1px solid #3f484e;
+color: #fff;
+font-weight: bold;
+font-size: 18px;
+width: 300px;
+height: 60px;
+background: linear-gradient(to top, #3f484e, #cccccc);
+display: block;
+cursor: pointer;
+}
+.form-area .contact-submit::after,
+.form-area .contact-back::before{
+position: absolute;
+content: "";
+}
+.arrow-r,
+.arrow-l{
+position: relative;
+}
+.arrow-r::after,
+.arrow-l::before{
+position: absolute;
+content: "";
+box-sizing: border-box;
+top: 0;
+bottom: 0;
+margin: auto;
+width: 20px;
+height: 14px;
+visibility: initial;
+}
+.form-area .arrow-r::after{
+right: 11px;
+border: 7px solid transparent;
+border-left: 12px solid #fff;
+}
+.form-area .arrow-l::before{
+left: 11px;
+border: 7px solid transparent;
+border-right: 12px solid #fff;
+z-index: 2;
+}
+.form-area .form-btn{
+margin: auto;
+margin-top: 50px;
+display: flex;
+justify-content: center;
+width: 300px;
+}
+.form-area .form-btn:hover{
+opacity: 0.7;
+}
+.form-area .btn-col{
+display: flex;
+justify-content: center;
+}
+.form-area .btn-col li:first-child{
+margin-right: 15px;
+}
+.form-area .btn-col li:last-child{
+margin-left: 15px;
+}
+.form-area.confirmation dl dt{
+padding-top: 0;
+}
+.form-area.confirmation dl dd{
+width: 614px;
+}
+#contact-main .supp-box{
+margin-top: 40px;
+}
+/*#contact-main .supp-box p{
+font-size: 14px;
+}*/
+#contact-main .supp-box p + p{
+margin-top: 20px;
+}
+
+@media screen and (max-width: 767px) {
+.pankuzu {
+width: calc((360 / 400) * 100vw);
+margin: 0 auto;
+padding-bottom: 24px;
+float: initial;
+}
+#contact-main{
+padding: 0 calc((20 / 400) * 100vw);
+margin: 0 0 100px;
+}
+#contact-main .h3_area{
+padding: 0 0 15px;
+}
+#contact-main .h3_area h3{
+font-size: 26px;
+}
+#contact-main .lead{
+padding: 20px 0 30px;
+}
+.form-area dl{
+display: block;
+}
+.form-area dl dt{
+width: 100%;
+font-size: 14px;
+display: block;
+margin-right: 5px;
+margin-bottom: 8px;
+padding-top: 8px;
+}
+.form-area dl dt .required{
+font-size: 12px;
+padding: 3px 6px 2px;
+display: inline-block;
+margin-left: 5px;
+}
+.form-area dl dd{
+width: 100%;
+}
+.form-area dl dd .error{
+margin-top: 6px;
+}
+.form-area .form-btn{
+width: 130px;
+}
+.form-area .contact-submit{
+width: 130px;
+}
+.form-area .contact-back{
+width: 130px;
+}
+.form-area.confirmation dl dd{
+width: 100%;
+}
+	
+}

@@ -1,0 +1,139 @@
+@charset "shift_jis";
+
+* {
+margin: 0px;
+padding: 0px;
+}
+
+html {
+width:100%;
+background-color:#ffffff;
+overflow-y:scroll;/* For Mozilla's bug */
+}
+
+body {
+margin:0;
+padding:0px;
+text-align:center;
+color: #000000;
+font-size:14px;
+font-family: "ÉqÉâÉMÉmäpÉS Pro", "Hiragino Kaku Gothic Pro", "sans-serif";
+
+}
+
+
+/** ---------------------------------- ***
+	äeóvëfèâä˙âª
+*** ------------------------------------------------------------------- ***/
+
+h1, h2, h3, h4, h5, h6, p, span, ul, ol, li, dl, dt, dd, table, th, td, input, legend, div, form, hr, address {
+margin:0;
+padding:0;
+list-style:none;
+font-weight: normal;
+font-style: normal;
+}
+
+p, h1, h2, h3, h4, h5, h6, ul, ol, dl, div, pre, blockquote, input {
+word-break:break-all;
+}
+
+hr {display: none;}
+
+a {
+/*\*/
+overflow: hidden;
+/**/
+}
+
+
+/** ---------------------------------- ***
+	Float Åï Float ClearéwíË
+*** ------------------------------------------------------------------- ***/
+
+.left {float: left;}
+.right {float: right;}
+.clear{clear:both;}
+
+div:after, ul:after, dl:after, dt:after, dd:after, td:after  {
+content:"";
+height:0;
+clear:both;
+display:block;
+visibility:hidden;
+}
+
+/* IE7óp*/
+div {zoom:100%;}
+
+
+
+/** ---------------------------------- ***
+	LinkéwíË
+*** ------------------------------------------------------------------- ***/
+
+a:link {text-decoration:underline; color:#E68126;}
+a:visited {text-decoration:underline; color:#E68126;}
+a:hover, a:active {text-decoration:underline; color:#E68126;}
+
+a img {border:none;}
+
+
+
+/** ---------------------------------- ***
+	TextéwíË
+*** ------------------------------------------------------------------- ***/
+
+/*** font size ***/
+
+.x-small {
+font-size: 80%;
+line-height: 140%;
+}
+
+.small {
+font-size: 86%;
+line-height: 140%;
+}
+
+.normal {
+font-size: 100%;
+line-height: 185%;
+}
+
+.large {
+font-size: 108%;
+line-height: 185%;
+}
+
+.x-large {
+font-size: 140%;
+line-height: 200%;
+}
+
+
+/*** text-align ***/
+
+.txt_center{text-align:center;}
+.txt_left{text-align:left;}
+.txt_right{text-align:right;}
+
+.pc_only{
+  display: block;
+}
+.sp_only{
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  
+  body {
+  font-size:18px;
+  }
+  .pc_only{
+    display: none;
+  }
+  .sp_only{
+    display: block;
+  }
+  
+}
