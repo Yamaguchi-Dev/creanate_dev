@@ -4,7 +4,7 @@ function get_user_mail_data($input)
 $mail_data_arr = array();
 $mail_data_arr["to"] = $input["email"];
 $mail_data_arr["subject"] = "【クレアネイト株式会社】お問い合わせを受け付けました。";
-$headers = "From: クレアネイト株式会社 お問い合わせ窓口<inquiry@creanate.co.jp>";
+$headers = "From: クレアネイト株式会社 お問い合わせ窓口<do_not_reply@creanate.co.jp>";
 
 $mail_data_arr["headers"] = $headers;
 
