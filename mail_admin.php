@@ -2,8 +2,6 @@
 function get_admin_mail_data($input)
 {
 $mail_data_arr = array();
-//$mail_data_arr["to"] = "horibe@favor.co.jp";
-//$mail_data_arr["to"] = "kei.yamaguchi.0104@gmail.com";
 $mail_data_arr["to"] = "inquiry@creanate.co.jp";
 $mail_data_arr["subject"] = "クレアネイト株式会社お問い合わせフォームより";
 $headers = "From: クレアネイト株式会社 お問い合わせフォーム<do_not_reply@creanate.co.jp>";
